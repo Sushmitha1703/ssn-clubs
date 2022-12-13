@@ -1,0 +1,127 @@
+<% layout('./layout/boilerplate') %>
+<body>
+  <h1 class="text-center">Edit Club</h1>
+  <div class="row">
+    <div class="col-md-6 offset-3">
+      <form action="/club/<%=clubs._id%>?_method=PUT" method="post">
+        <div class="mb-3">
+          <label class="form-label" for="title">Club Name</label>
+          <input class="form-control" type="text" id="title" name="clubs[title]" required value="<%=clubs.title%>">
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div> 
+          <div class="mb-3">
+            <label class="form-label" for="description">Club Description</label>
+            <textarea class="form-control" type="text" id="description" name="clubs[description]"><%=clubs.description%></textarea>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+          <div class="mb-3">
+            <label class="form-label" for="title">President name</label>
+          <input class="form-control" type="text" id="title" name="clubs[presidentname]" value="<%=clubs.presidentname%>">
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="title">President department</label>
+          <input class="form-control" type="text" id="title" name="clubs[presidentdept]" value="<%=clubs.presidentdept%>">
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+            </div> 
+           <div class="mb-3">
+              <label class="form-label" for="title">President year</label>
+            <input class="form-control" type="text" id="title" name="clubs[presidentyear]" value="<%=clubs.presidentyear%>">
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              </div> 
+            <div class="mb-3">
+                <label class="form-label" for="title">President linkedin</label>
+              <input class="form-control" type="text" id="title" name="clubs[presidentlinkedin]" value="<%=clubs.presidentlinkedin%>">
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                </div> 
+  
+            <div class="mb-3">
+              <label class="form-label" for="title">Vice President name</label>
+            <input class="form-control" type="text" id="title" name="clubs[vpname]" value="<%=clubs.vpname%>">
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="title">Vice President department </label>
+              <input class="form-control" type="text" id="title" name="clubs[vpdept]" value="<%=clubs.vpdept%>">
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="title">Vice President year</label>
+            <input class="form-control" type="text" id="title" name="clubs[vpyear]" value="<%=clubs.vpyear%>">
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="title">Vice President linkedin</label>
+              <input class="form-control" type="text" id="title" name="clubs[vplinkedin]" value="<%=clubs.vplinkedin%>">
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="title">Coordinator name</label>
+            <input class="form-control" type="text" id="title" name="clubs[coordname]" value="<%=clubs.coordname%>">
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="title">Coordinator department</label>
+              <input class="form-control" type="text" id="title" name="clubs[coorddept]" value="<%=clubs.coorddept%>">
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="title">Coordinator Year</label>
+                <input class="form-control" type="text" id="title" name="clubs[coordyear]" value="<%=clubs.coordyear%>">
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="title">coordinator linkedin</label>
+                  <input class="form-control" type="text" id="title" name="clubs[coordlinkedin]" value="<%=clubs.coordlinkedin%>">
+                  <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>
+          <div class="mb-3">
+          <button class="btn btn-info" type="submit">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

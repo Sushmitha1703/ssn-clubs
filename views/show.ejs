@@ -1,0 +1,407 @@
+<% layout('layout/boilerplate') %> 
+    <link rel="stylesheet" href="../public/stylesheets/showpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <title>Club Page</title>
+    <script type="text/javascript">
+        var link = document.createElement("link");
+        link.setAttribute("rel","stylesheet");
+        link.setAttribute("href","http://wherever.com/yourstylesheet.css");
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(link);
+      </script>
+    <section class="Home-section">
+        <div class="container1">
+            <nav>
+                <img style="border-radius: 50%;" class="logo" src="https://t3.ftcdn.net/jpg/04/54/66/12/360_F_454661277_NtQYM8oJq2wOzY1X9Y81FlFa06DVipVD.jpg" alt="">
+                <h2 class="heading"><%=clubs.title %> </h2>
+                <ul class="navbar-items">
+                    <li class="navbar-content"><a href="#About">About</a></li>
+                    <li class="navbar-content"><a href="#Events">Events</a></li>
+                    <li class="navbar-content"><a href="#Gallery">Gallery</a></li> 
+                    <% if(currentUser){ %> 
+                    <li class="navbar-content"><a href="/profile/<%=currentUser._id%> ">view profile</a></li>
+                    <% } %> 
+                    <li class="navbar-content"><a href="/club">dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="box1">
+                <div class="main-content">
+                    <img src="<%=clubs.showpageimage.url%>" alt="">
+                </div>
+                <div>
+                    <h1 class="glow-font main-heading"><%=clubs.title%></h1>
+                </div>
+            </div>
+            <% if(currentUser && currentUser.username==='incharge') {%> 
+                <section class="eventbtn">
+                    <form action="/club/<%=clubs._id%>/edit" method="get">
+                    <button  class="button-64" role="button"><span class="text">Edit club</span></button> 
+                    </form>
+                </section>
+                <% } %>
+        </div>
+    </section>
+    
+    <section id="About" class="About-section">
+        <div class="box2">
+            <h2 class="about-heading glow-font">ABOUT</h2>
+            <div class="about">
+                <div class="about-content">
+                    <p><%=clubs.description%> 
+                    </p>
+                </div>
+                <div class="img-class">
+                    <img  class="about-img" src="https://media.istockphoto.com/vectors/music-online-learning-the-young-man-is-engaged-in-online-music-the-vector-id1286872893?b=1&k=20&m=1286872893&s=170667a&w=0&h=_0vseuESV4jMMAIa6tPmA9bwbstxTC5F_cwta8FoDsQ=" alt="">
+                </div>
+            </div>
+                
+        </div>
+    </section>
+        <h2 id = "Events" class="eve-heading glow-font">UPCOMING EVENTS</h2>
+        <section class="Event-section">
+             <!-- <h2 class="domain-heading glow-font">UPCOMING EVENTS</h2> -->
+             <% if(currentUser && currentUser.username==='adminssn') {%> 
+                <section class="eventbtn">
+                    <form action="/club/<%=clubs._id%>/newevent/form" method="get">
+                    <button  class="button-64" role="button"><span class="text">Add Events</span></button> 
+                    </form>
+                </section>
+                <% } %> 
+                
+                <% if(clubs.upcomingEvents.length===0) {%> 
+                    <h1 class="glow-font noevent">Events will be posted soon ! stay tuned</h1>
+                <% } else {%> 
+                <% clubs.upcomingEvents.forEach((c,i)=>{%>
+                <div class="event-block">
+                <div class="event-box">
+                    <h2 class="event-heading"><%=c.text%> </h2>
+                    <div class="event-content">
+                        <p class=""><%=c.description %> </p>
+                    </div>
+                   
+                    <div class="event-content-btn">
+                        <button onclick="window.location.href='<%=c.link%>';" style="margin-left: 30px;" class="button-41" role="button">Register</button>
+                <% if(currentUser && currentUser.username==='adminssn') { %> 
+                        <form action="/club/<%=clubs._id%>/newevent/<%=c._id%>?_method=DELETE" method="post">
+                    <button type="submit" style="margin-left: 60px;" class="button-42" role="button">Delete</button>
+                </form>
+                <% } %>
+                </div>   
+                </div>
+                </div>
+                <% } )%> 
+                <% } %> 
+       
+<h2 class="gal-heading glow-font">GALLERY</h2>
+    <section id="Gallery" class="gallery-section">
+        <% if(clubs.clubImages) {%> 
+        <div class="gal-box">
+            <% clubs.clubImages.forEach((img,i)=>{ %> 
+            <span style="--i:<%=i%>;"><img class="gall-img" src="<%=img.url%> " alt=""></span>
+            <% }) %> 
+        </div>
+        <% } %> 
+        <!--  <div class="gall-btn"> -->
+        <!-- </div> --> 
+    </section>
+    <section class="galbtn">
+        <button onclick="window.location.href='/club/<%=clubs._id%>/gallery';" class="button-64" role="button"><span class="text">View More</span></button> 
+    </section>
+    <h2 class="gal-heading glow-font">PROFILE</h2>
+    <section id="ContactUs" class="profile-section">
+        <div style="margin-left: 200px;" class="box">
+            <div class="profile-content">
+                <p style="padding-left:80px;"><%=clubs.presidentname %> </p>
+                <p style="padding-left:80px;"><%=clubs.presidentyear%> year</p>
+                <p><%=clubs.presidentdept%></p>
+                <!-- <img class="pres-img" src="" alt=""> -->
+            </div>
+            <ul class="social-icon">
+                <li><a href="<%=clubs.presidentlinkedin%>"><i style="margin-top: 15px;" class="fab fa-linkedin"></i></i></a></li>
+            </ul>
+            <div class="details">
+                <h2><span>President</span></h2>
+            </div>
+        </div>
+        <div style="margin-left: 200px;" class="box">
+            <div class="profile-content">
+                <p style="padding-left:80px;"><%=clubs.vpname %> </p>
+                <p style="padding-left:80px;"><%=clubs.vpyear%> year</p>
+                <p><%=clubs.vpdept%></p>
+                <!-- <img class="pres-img" src="" alt=""> -->
+            </div>
+            <ul class="social-icon">
+                <li><a href="<%=clubs.vplinkedin%>"><i style="margin-top: 15px;" class="fab fa-linkedin"></i></i></a></li>
+            </ul>
+            <div class="details">
+                <h2><span>Vice President</span></h2>
+            </div>
+        </div>
+        <div style="margin-left: 200px;" class="box">
+            <div class="profile-content">
+                <p style="padding-left:80px;"><%=clubs.coordname %> </p>
+                <p style="padding-left:80px;"><%=clubs.coordyear%> year</p>
+                <p><%=clubs.coorddept%></p>
+                <!-- <img class="pres-img" src="" alt=""> -->
+            </div>
+            <ul class="social-icon">
+                <li><a href="<%=clubs.coordlinkedin%> "><i style="margin-top: 15px;" class="fab fa-linkedin"></i></i></a></li>
+            </ul>
+            <div class="details">
+                <h2><span>Coordinator</span></h2>
+            </div>
+        </div>
+    </section>
+    <% if(currentUser){ %>
+    <% if(clubs.title === 'Lights Out Please' || clubs.title === 'Arudhra Dance' || clubs.title === 'N2K Dance') {%>
+        <h2 style="background-color:#000 ;text-align:center;color: #fff; padding-bottom: 5px;">Auditions would be conducted for this club<br>Details will be posted soon :)</h2>
+        <% } else { %> 
+    <section style="background-color:#000 ; color: #fff; text-align: center; font-size: 2rem;"> 
+        <p style="line-height:1.5">Wanna join the club ? <br>click below to join</p>
+        <div class="btnn"> 
+            <form action="/club/<%=clubs._id%>/members/<%=currentUser._id%>" method="post">
+            <button  class="button-64" role="button"><span class="text">Join Clubs</span></button> 
+            </form>
+        </div>
+    </section>
+    <% } %>
+    <% } %>    
+    <% if(currentUser && currentUser.username==='incharge'){ %>
+    <section style="background-color:#000 ; color: #fff; text-align: center; font-size: 2rem;">
+        <p style="line-height:1.5">Delete club</p>
+        <div class="btnn"> 
+            <form action="/club/<%=clubs._id%>?_method=DELETE" method="post">
+            <button  class="button-64" role="button"><span class="text">Delete</span></button> 
+            </form>
+        </div>
+    </section>
+    <% } %> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

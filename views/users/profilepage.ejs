@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/stylesheets/profilepage.css">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="heading">
+        <h2 class="neon">USER </h2>
+        <h2 class="flux">DETAILS </h2>
+    </div>
+    <div class="content">
+        
+        <div class="event-box">
+            <img src="https://campus.oppo.com/2020/src/public/images/1440/default_avatar.3062df78.png" alt="">
+            <h2 class="event-heading"><%= user.username %> </h2>
+            <div class="event-content">
+                
+                <p><strong>Year:</strong> <i><%=user.year%> </i> </p>
+                <p><strong>Department:</strong> <i><%=user.dept%> </i> </p>
+                <p><strong>Email Id:</strong> <i><%= user.email %> </i> </p>
+                <p><strong>Clubs:</strong></p>
+                <% if(user.clubsAssociated) {%> 
+                    <% for(let c of user.clubsAssociated) {%> 
+                <ul>
+                    <li><a href="#"><i><%=c.title%></i></a></li>
+                </ul>
+                <% } %> 
+                <% } else {%> 
+                    <ul><p>Join clubs to know more</p></ul>
+                    <% } %> 
+                <div class="btn">
+                    <form action="/logout" method="get">
+                    <button type="submit" class="button-42" role="button" >Logout</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

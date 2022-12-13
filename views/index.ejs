@@ -1,0 +1,133 @@
+<% layout('layout/boilerplate') %> 
+<link rel="stylesheet" href="../public/stylesheets/dashboard.css">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <section class="Home-section">
+        <div class="">
+            <nav>
+                <ul class="navbar-items">
+                    <% if(currentUser && currentUser.username==='incharge'){ %> 
+                    <li class="navbar-content"><a href="/club/new">New Clubs</a></li>
+                    <% } %> 
+                    <% if(!currentUser) {%> 
+                    <li class="navbar-content"><a href="/register">Register</a></li>
+                    <li class="navbar-content"><a href="/">Home</a></li>
+                    <% } %> 
+                    <% if(currentUser){ %> 
+                    <li class="navbar-content"><a href="/profile/<%=currentUser._id%>">profile</a></li>
+                    <% } else {%> 
+                    <li class="navbar-content"><a href="/login">Login</a></li>
+                    <% } %> 
+                    <% if(currentUser){ %> 
+                    <li class="navbar-content"><a href="/logout">Logout</a></li>
+                    <% } %> 
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <h1 class="heading">Club dashboard</h1>
+    <div class="container">
+      <% for(let c of newclubs){ %> 
+        <div class="box">
+            <span></span>
+            <div class="content">
+                <h2><%=c.title %> </h2>
+                <img class ="icon-img" src="<%=c.showpageimage.url%> " alt="">
+                <a href="/club/<%=c._id%>">Know More</a>
+            </div>
+        </div>
+        <% } %> 
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+

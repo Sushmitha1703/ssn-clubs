@@ -1,0 +1,129 @@
+*
+{
+    
+    color: white;
+}
+
+body{
+  background: linear-gradient(45deg,#140629,#0c2d4e,#175385);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite ;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+
+@keyframes gradient{
+  0%{
+      background-position: 0;
+  }
+  50%{
+      background-position: 100%;
+  }
+  
+}
+h1{
+    padding-top: 200px;
+    color: white;
+}
+.glow-font{
+    position: relative;
+    font-size: 4em;
+    letter-spacing: 10px;
+    color: #0e3742;
+    width: 100%;
+    text-align: center;
+    /* -webkit-box-reflect: below 1px linear-gradient(transparent,#0008); */
+    line-height: 0.70em;
+    outline: none;
+    animation: animate1 5s linear infinite;
+}
+@keyframes animate1 {
+    /* 0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92% */
+    /* 0%
+    {
+        color: #0e3742;
+        text-shadow: none;
+    } */
+    /* 18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100% */
+
+    0%,100%
+    {
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+                    0 0 20px #03bcf4,
+                    0 0 40px #03bcf4,
+                    0 0 80px #03bcf4,
+                    0 0 160px #03bcf4;
+
+    }
+}
+
+p{
+    font-size: 2rem;
+    text-align: left;
+    margin-right: 3rem;
+}
+/* CSS */
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+.btn{
+    padding-top: 50px;
+    padding-left: 570px;
+    display: flex;
+    
+}
+
+.btn1
+{
+    padding-right: 100px;
+}
+p{
+    padding-top: 100px;
+    padding-left: 35%;
+}

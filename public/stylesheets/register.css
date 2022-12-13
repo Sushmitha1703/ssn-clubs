@@ -1,0 +1,197 @@
+@import url('<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">');
+  *
+  {
+      margin: 0;
+      padding:0;
+      box-sizing: border-box;
+      font-family: 'poppins', sans-serif;
+  }
+  body
+  {
+      background-color: #262626;
+      overflow: hidden;
+  }
+  section
+  {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+  }
+  .heading
+  {
+      padding-bottom: 50px;
+      font-size: 10px;
+      display: flex;
+      text-align: center;
+      vertical-align: middle;
+      padding-left: 0px;
+  }
+  @font-face {
+      font-family: neon;
+      src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+    }
+    
+  
+    .neon {
+      font-family: 'poppins', sans-serif;
+      color: #FB4264;
+      font-size: 5vw;
+      line-height: 5vw;
+      text-shadow: 0 0 3vw #F40A35;
+      padding-right: 10px;
+    }
+    
+    .flux {
+      font-family: 'poppins', sans-serif;
+      color: #426DFB;
+      font-size: 5vw;
+      line-height: 5vw;
+      text-shadow: 0 0 3vw #2356FF;
+    }
+    
+    .neon {
+      animation: neon 1s ease infinite;
+      -moz-animation: neon 1s ease infinite;
+      -webkit-animation: neon 1s ease infinite;
+    }
+    
+    @keyframes neon {
+      0%,
+      100% {
+        text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+        color: #FED128;
+      }
+      50% {
+        text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+        color: #806914;
+      }
+    }
+    
+    .flux {
+      animation: flux 2s linear infinite;
+      -moz-animation: flux 2s linear infinite;
+      -webkit-animation: flux 2s linear infinite;
+      -o-animation: flux 2s linear infinite;
+    }
+    
+    @keyframes flux {
+      0%,
+      100% {
+        text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+        color: #28D7FE;
+      }
+      50% {
+        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+        color: #146C80;
+      }
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  .box
+  {
+      position:relative;
+  }
+  
+  .container
+  {
+      position: relative;
+      width: 400px;
+      min-height: 400px;
+      background:rgba(255,255,255,0.1);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.5);
+      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+  
+  }
+  .form
+  {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+  }
+  .form h2
+  {
+      position: relative;
+      color: #fff;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+  }
+  
+  .form h2::before
+  {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 80px;
+      height: 4px;
+      background:#fff;
+  }
+  
+  .form .inputBox
+  {
+      width: 100%;
+      margin-top: 20px;
+  }
+  
+  .form .inputBox input
+  {
+      width : 100%;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      outline: none;
+      padding: 10px 20px;
+      border-radius: 35px;
+      border: 1px solid rgba(255,255,255,0.5);
+      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  .form .inputBox input::placeholder
+  {
+      color: #fff;
+  }
+  .form .inputBox input[type="button"]
+  {
+      background: #fff;
+      color: #666;
+      max-width: 100px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      font-weight: 600;
+  }
+  .forget
+  {
+      margin-top: 5px;
+      color: #fff;
+  }
+  .forget *
+  {
+      color: #fff;
+      font-weight: 600;
+  }
+.btn{
+  background-color:gray;
+  margin: 5px;
+  padding: 3px;
+  text-align: center;
+}

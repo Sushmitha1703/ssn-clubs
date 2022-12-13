@@ -1,0 +1,36 @@
+<% layout('./layout/boilerplate') %>
+<h1 class="text-center">Add New Event</h1>
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <form action="/club/<%=clubs._id%>/newevent"  method="post">
+      <div class="mb-3">
+        <label class="form-label" for="title">Event Name</label>
+        <input class="form-control" type="text" id="title" name="event[text]" required>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="description">Event Description</label>
+          <textarea class="form-control" type="text" id="description" name="event[description]"></textarea>
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="mb-3">
+          <label class="form-label" for="title">Date of Event</label>
+        <input class="form-control" type="date" id="title" name="event[date]" required>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="title">Registration Link</label>
+          <input class="form-control" type="text" id="title" name="event[link]" required>
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+            </div>
+         <div class="mb-3">
+                <button class="btn btn-success" type="submit">submit</button>
+         </div>

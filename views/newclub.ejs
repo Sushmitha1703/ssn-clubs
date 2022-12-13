@@ -1,0 +1,124 @@
+<% layout('./layout/boilerplate') %>
+<h1 class="text-center">New Club</h1>
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <form action="/club" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label" for="title">Club Name</label>
+        <input class="form-control" type="text" id="title" name="clubs[title]" required>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="description">Club Description</label>
+          <textarea class="form-control" type="text" id="description" name="clubs[description]"></textarea>
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        <div class="mb-3">
+          <label class="form-label" for="title">Images</label>
+          <input class="form-control" type="file" id="title" name="clubImages" multiple="multiple" required>
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="title">showpageImage Url</label>
+            <input class="form-control" type="file" id="title" name="showpageImage" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+          <div class="mb-3">
+            <label class="form-label" for="title">President name</label>
+          <input class="form-control" type="text" id="title" name="clubs[presidentname]" required>
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="title">President department</label>
+          <input class="form-control" type="text" id="title" name="clubs[presidentdept]" required>
+          <div class="valid-feedback">
+              Looks good!
+            </div>
+            </div> 
+           <div class="mb-3">
+              <label class="form-label" for="title">President year</label>
+            <input class="form-control" type="text" id="title" name="clubs[presidentyear]" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              </div> 
+            <div class="mb-3">
+                <label class="form-label" for="title">President linkedin</label>
+              <input class="form-control" type="text" id="title" name="clubs[presidentlinkedin]" required>
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                </div> 
+            <div class="mb-3">
+              <label class="form-label" for="title">Vice President name</label>
+            <input class="form-control" type="text" id="title" name="clubs[vpname]" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="title">Vice President department </label>
+              <input class="form-control" type="text" id="title" name="clubs[vpdept]" required>
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="title">Vice President year</label>
+            <input class="form-control" type="text" id="title" name="clubs[vpyear]" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="title">Vice President linkedin</label>
+              <input class="form-control" type="text" id="title" name="clubs[vplinkedin]" required>
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="title">Coordinator name</label>
+            <input class="form-control" type="text" id="title" name="clubs[coordname]" required>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="title">Coordinator department</label>
+              <input class="form-control" type="text" id="title" name="clubs[coorddept]" required>
+              <div class="valid-feedback">
+                  Looks good!
+                </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="title">Coordinator Year</label>
+                <input class="form-control" type="text" id="title" name="clubs[coordyear]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label" for="title">coordinator linkedin</label>
+                  <input class="form-control" type="text" id="title" name="clubs[coordlinkedin]" required>
+                  <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                </div>
+        <div class="mb-3">
+        <button class="btn btn-success" type="submit">submit</button>
+      </div>
+    </form>
+  </div>
+</div>

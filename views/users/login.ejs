@@ -1,0 +1,90 @@
+<% layout('./layout/boilerplate') %>
+<link rel="stylesheet" href="/public/stylesheets/login.css">
+<h1 class="text-center">LOGIN</h1>
+<section>
+  <div class ="box">
+      <div class="heading">
+          <div class="neon">SSN </div>
+          <div class="flux">CLUBS </div>
+      </div>
+      <div class ="container">
+          <div class="form">
+              <h2>Login Form</h2>
+              <form action="/login" method="post" >
+                  <div class ="inputBox">
+                      <input type="text" type="text" id="username" name="username" required  placeholder="Username">
+                  </div>
+                  <div class ="inputBox">
+                      <input type="password"  type="password" id="password" name="password" required  placeholder="password">
+                  </div>
+                  <button class="button-60">submit</button>
+                  <p class="forget">Don't have an account ?<a href="/register">sign up</a></p>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <form >
+      <div class="mb-3">
+        <label class="form-label" for="username">username</label>
+        <input class="form-control" type="text" id="username" name="username" required>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="password">password</label>
+        <input class="form-control" type="password" id="password" name="password" required>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-success" type="submit">submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
